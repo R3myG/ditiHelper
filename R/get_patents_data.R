@@ -20,8 +20,8 @@
 get_patents_data <- function(query){
   
   fields <- patentsview::get_fields(
-    endpoint = c("patents"), 
-    groups = c("applications", "assignees", "cpcs", "patents", "examiners", "inventors", "lawyers", "wipos", "cited_patents", "citedby_patents") )
+    endpoint = "patents", 
+    groups = c("applications", "assignees", "cpcs", "patents", "examiners", "inventors", "lawyers", "wipos") )
   
   pv_res <- patentsview::search_pv(query = query, fields = fields, all_pages = TRUE)
   
