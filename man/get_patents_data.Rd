@@ -26,4 +26,5 @@ query <- with_qfuns(
 get_patents_data(query)
 }
 
+
 }

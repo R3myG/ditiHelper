@@ -4,6 +4,7 @@
 #' @param query Takes in a query formated with `patentsview` domain specific language (DSL)
 #' @return List containing patents information
 #' 
+#' @export
 #' 
 #' @examples
 #' \dontrun{
@@ -15,6 +16,7 @@
 #' )
 #' get_patents_data(query)
 #' }
+#' 
 #' 
 
 get_patents_data <- function(query){
