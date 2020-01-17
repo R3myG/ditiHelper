@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^ditiHelper\.Rcheck$
+^ditiHelper.*\.tar\.gz$
+^ditiHelper.*\.tgz$
