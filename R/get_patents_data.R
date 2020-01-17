@@ -16,7 +16,6 @@
 #' }
 #' 
 #' @export
-
 get_patents_data <- function(query){
   
   fields <- patentsview::get_fields(

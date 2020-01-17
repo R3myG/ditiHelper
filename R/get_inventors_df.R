@@ -11,7 +11,6 @@
 #' }
 #' 
 #' @export
-
 get_inventors_df <- function(pv_res){
   
   df_inventors <- pv_res$data$patents$inventors %>% 
