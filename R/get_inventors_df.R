@@ -4,13 +4,13 @@
 #' @param pv_res Takes results from get_patents_data 
 #' @return A tibble with the inventors information
 #' 
-#' @export
 #' @importFrom magrittr %>%
 #' @examples
 #' \dontrun{
 #' get_inventors_df(pv_res)
 #' }
 #' 
+#' @export
 
 get_inventors_df <- function(pv_res){
   

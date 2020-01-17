@@ -4,8 +4,6 @@
 #' @param query Takes in a query formated with `patentsview` domain specific language (DSL)
 #' @return List containing patents information
 #' 
-#' @export
-#' 
 #' @examples
 #' \dontrun{
 #' query <- with_qfuns( 
@@ -17,7 +15,7 @@
 #' get_patents_data(query)
 #' }
 #' 
-#' 
+#' @export
 
 get_patents_data <- function(query){
   
