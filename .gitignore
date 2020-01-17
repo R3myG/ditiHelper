@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+ditiHelper.Rcheck/
+ditiHelper*.tar.gz
+ditiHelper*.tgz
