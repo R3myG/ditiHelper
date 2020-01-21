@@ -2,15 +2,11 @@
 % Please edit documentation in R/article_to_df.R
 \name{article_to_df}
 \alias{article_to_df}
-\title{Cast PubMed Data into a List of Articles}
+\title{Extract Data from a PubMed Record}
 \usage{
-article_to_df(
-  pubmedArticle,
-  autofill = FALSE,
-  max_chars = 500,
-  getKeywords = FALSE,
-  getAuthors = TRUE
-)
+article_to_df(pubmedArticle, autofill = FALSE, 
+                     max_chars = 500, getKeywords = FALSE, 
+                     getAuthors = TRUE)
 }
 \arguments{
 \item{pubmedArticle}{String including one PubMed record.}
@@ -31,10 +27,10 @@ speed up the operation.}
 Data frame including the extracted features. Each row correspond a different author.
 }
 \description{
-Convert an XML object of PubMed records into a list of strings 
-(character vector of length 1) corresponding to individual PubMed articles. 
-PubMed records are identified by a "/PubmedArticle" XML tag. This automatically casts 
-all the content of each PubMed record to a character-class object without removing XML tags.
+Extract publication-specific information from a PubMed record driven by XML tags. 
+The input record is a string (character-class vector of length 1) and includes 
+PubMed-specific XML tags. Data are returned as a data frame where each row corresponds 
+to one of the authors of the PubMed article.
 }
 \details{
 Given one Pubmed Article record, this function will automatically extract a set of features. 
@@ -45,10 +41,27 @@ Each row of the output data frame corresponds to one of the authors of the PubMe
 set 'getAuthors' = TRUE.
 }
 \examples{
+try({
+  ## Display some contents
+  data("EPMsamples")
+  #display Query String used for collecting the data
+  print(EPMsamples$NUBL_1618$qry_st)
+  #Get records
+  BL_list <- EPMsamples$NUBL_1618$rec_lst
+  cat(BL_list[[1]])
+  # cast PM recort to data.frame
+  BL_df <- article_to_df(BL_list[[1]], max_chars = 0)
+  print(BL_df)
+}, silent = TRUE)
+
 \dontrun{
-## Retrieve PubMed data and return a list ot articles
-Articles_List <- articles_to_list("pubmed_result.xml")
-Articles_DF <- map_dfr(Articles_List, article_to_df) 
+## Query PubMed, retrieve a selected citation and format it as a data frame
+dami_query <- "Damiano Fantini[AU] AND 2017[PDAT]"
+dami_on_pubmed <- get_pubmed_ids(dami_query)
+dami_abstracts_xml <- fetch_pubmed_data(dami_on_pubmed)
+dami_abstracts_list <- articles_to_list(dami_abstracts_xml)
+article_to_df(pubmedArticle = dami_abstracts_list[[1]], autofill = FALSE)
+article_to_df(pubmedArticle = dami_abstracts_list[[2]], autofill = TRUE, max_chars = 300)[1:2,]
 }
 
 }

@@ -2,6 +2,7 @@
 
 export(article_to_df)
 export(articles_to_list)
+export(custom_grep)
 export(get_applications_df)
 export(get_assignees_df)
 export(get_cpcs_df)
@@ -11,4 +12,5 @@ export(get_lawyers_df)
 export(get_patents_data)
 export(get_patents_df)
 export(get_wipos_df)
+export(read_pubmed_XML)
 importFrom(magrittr,"%>%")

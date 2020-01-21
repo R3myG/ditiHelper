@@ -1,7 +1,7 @@
 Package: ditiHelper
 Type: Package
 Title: Package to help students
-Version: 0.1.12
+Version: 0.1.13
 Author: person('Remy', 'Gavard', email = 'r.gavard@gmail.com', role = c('cre', 'aut'))
 Maintainer: Remy Gavard <r.gavard@gmail.com>
 Description: More about what it does (maybe more than one line)
@@ -11,8 +11,11 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
   dplyr,
+  lubridate,
   magrittr,
   patentsview,
+  purrr,
+  tibble,
   tidyr,
   XML
 RoxygenNote: 7.0.2
