@@ -1,7 +1,7 @@
 Package: ditiHelper
 Type: Package
 Title: Package to help students
-Version: 0.1.11
+Version: 0.1.12
 Author: person('Remy', 'Gavard', email = 'r.gavard@gmail.com', role = c('cre', 'aut'))
 Maintainer: Remy Gavard <r.gavard@gmail.com>
 Description: More about what it does (maybe more than one line)
@@ -13,6 +13,7 @@ Imports:
   dplyr,
   magrittr,
   patentsview,
-  tidyr
+  tidyr,
+  XML
 RoxygenNote: 7.0.2
 URL: github.com/R3myG/ditiHelper
