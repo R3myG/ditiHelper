@@ -18,9 +18,7 @@ get_pubmed_df_general <- function(query){
 
   pubmed_data <- tibble::tibble(Title = RISmed::ArticleTitle(records),
                                 PMID = RISmed::PMID(records),    
-                            AbstractText = RISmed::AbstractText(records),
                             Year = RISmed::YearAccepted(records),
-                            Authors = list(RISmed::Author(records)),
                             Journal = RISmed::Title(records),
                             Country = RISmed::Country(records),
                             Language = RISmed::Language(records))
@@ -56,3 +54,4 @@ get_pubmed_df_abstract <- function(query){
   return(pubmed_data)
   
 }
+
