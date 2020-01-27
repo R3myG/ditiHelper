@@ -15,6 +15,7 @@ Imports:
   magrittr,
   patentsview,
   purrr,
+  RISmed,
   tibble,
   tidyr,
   XML
