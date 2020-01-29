@@ -42,7 +42,7 @@ get_pubmed_df_general <- function(query){
 #' @export
 get_pubmed_df_abstract <- function(query){
   
-  search_query <- RISmed::EUtilsSummary(query, retmax=10000, mindate=1900,maxdate=2021)
+  search_query <- RISmed::EUtilsSummary(query, retmax=100000, mindate=1900,maxdate=2021)
   
   records <- RISmed::EUtilsGet(search_query, type = "efetch", db = "pubmed")
   
